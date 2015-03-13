@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\android\workspace\Pigca\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\android\workspace\Pigca\app\build\intermediates\pre-dexed\debug\classes-26a12cfffef0d0cfc62a97d47eda7af3b56d6fff.jar" />
+    </item>
+    <item
+        jar="C:\Users\USER\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="C:\android\workspace\Pigca\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-437282f4ded7d7b80fdd137af923779c11cbf827.jar" />
+    </item>
+    <item
+        jar="C:\android\workspace\Pigca\app\libs\bolts-android-1.1.4-javadoc.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f5dd6492c539679411fa30818320b737c410158f">
+        <dex dex="C:\android\workspace\Pigca\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.4-javadoc-1c195b08d5200b65c4ba06b6d1506d125b39adef.jar" />
+    </item>
+    <item
+        jar="C:\android\workspace\Pigca\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\android\workspace\Pigca\app\build\intermediates\pre-dexed\debug\classes-50bd8f9c0d3ede05bf4097a640a8351e5ce0608c.jar" />
+    </item>
+    <item
+        jar="C:\Users\USER\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.4\129874135e6081269ace2312092031558865de12\bolts-android-1.1.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="129874135e6081269ace2312092031558865de12">
+        <dex dex="C:\android\workspace\Pigca\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.4-6564c6934da07ca03ab1e62689d10e4fbee766fe.jar" />
+    </item>
+    <item
+        jar="C:\android\workspace\Pigca\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\android\workspace\Pigca\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-d5537b134ab8db51a74696a7958af9d0b7afdd48.jar" />
+    </item>
+    <item
+        jar="C:\android\workspace\Pigca\app\libs\ParseCrashReporting-1.8.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6abf1314a88755b8fa034b2ae99956fc02170ed1">
+        <dex dex="C:\android\workspace\Pigca\app\build\intermediates\pre-dexed\debug\ParseCrashReporting-1.8.3-7e9d05d691025facfa525741aab299bfebb17ee4.jar" />
+    </item>
+    <item
+        jar="C:\android\workspace\Pigca\app\libs\Parse-1.8.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="56dfc827c23c1f0be64eff2ef556633ea95b16ad">
+        <dex dex="C:\android\workspace\Pigca\app\build\intermediates\pre-dexed\debug\Parse-1.8.3-43e77191a679b75348cd2106b212e379efd699d7.jar" />
+    </item>
+
+</items>

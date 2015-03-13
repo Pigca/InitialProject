@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="hkust.comp4521.project.pigca.HomepageActivity">
+
+    <item android:id="@+id/postStatus"
+        android:title="Post"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/logoutUser"
+        android:title="Logout"
+        app:showAsAction="never" />
+
+</menu>
