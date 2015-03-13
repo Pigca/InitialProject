@@ -13,73 +13,32 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 
 
-public class LoginActivity extends ActionBarActivity {
+public class LoginActivity extends ActionBarActivity implements View.OnClickListener{
 
     private EditText mUsername;
     private EditText mPassword;
     private Button mLoginButton;
-    private Button mCreateAccountButtton;
+    private Button mCreateAccountButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Enable Local Datastore.
-        Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "PpuOpKDNjNqJ5qVviZohBSZ0U98W1nVi6q5Lmf5H", "3O3uEgIykqI9LDcMda54N1FLZDh5Mim3tQlHIA2v");
 
         // Initialization
         mUsername = (EditText) findViewById(R.id.usernameLoginTextBox);
         mPassword = (EditText) findViewById(R.id.passwordLoginTextBox);
 
         mLoginButton = (Button) findViewById(R.id.loginButton);
-        mCreateAccountButtton = (Button) findViewById(R.id.createAccountButton);
+        mLoginButton.setOnClickListener(this);
 
-        // Listen to when the mLogin button is clicked
-        mLoginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // get the input from user
-                String username = mUsername.getText().toString().trim();
-                String password = mPassword.getText().toString().trim();
-
-                // Login he user using parse sdk
-                ParseUser.logInInBackground(username, password, new LogInCallback() {
-                    @Override
-                    public void done(ParseUser parseUser, ParseException e) {
-
-                        if(e == null){
-                            // Login successfully
-                            Toast.makeText(LoginActivity.this, "Welcome back!", Toast.LENGTH_LONG).show();
-                            Intent toHome = new Intent(LoginActivity.this, HomepageActivity.class);
-                            startActivity(toHome);
-                        }
-                        else{
-                            AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                            builder.setMessage(e.getMessage());
-                            builder.setTitle("Sorry!");
-                            builder.setPositiveButton("Ok", new DialogInterface.OnClickListener(){
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    // Close the dialog
-                                    dialog.dismiss();
-                                }
-                            });
-                            AlertDialog dialog = builder.create();
-                            dialog.show();
-                        }
-                    }
-                });
-
-            }
-        });
-
+        mCreateAccountButton = (Button) findViewById(R.id.createAccountButton);
+        mCreateAccountButton.setOnClickListener(this);
 
     }
 
@@ -104,5 +63,50 @@ public class LoginActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.loginButton:
+                // get the input from user
+                String username = mUsername.getText().toString().trim();
+                String password = mPassword.getText().toString().trim();
+
+                // Login he user using parse sdk
+                ParseUser.logInInBackground(username, password, new LogInCallback() {
+                    @Override
+                    public void done(ParseUser parseUser, ParseException e) {
+
+                        if (e == null) {
+                            // Login successfully
+                            Toast.makeText(LoginActivity.this, "Welcome back!", Toast.LENGTH_LONG).show();
+                            Intent toHome = new Intent(LoginActivity.this, HomepageActivity.class);
+                            startActivity(toHome);
+                        } else {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+                            builder.setMessage(e.getMessage());
+                            builder.setTitle("Sorry!");
+                            builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // Close the dialog
+                                    dialog.dismiss();
+                                }
+                            });
+                            AlertDialog dialog = builder.create();
+                            dialog.show();
+                        }
+                    }
+                });
+                break;
+
+            case R.id.createAccountButton:
+                // take user to register
+                Intent toRegister = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(toRegister);
+                break;
+
+        }
     }
 }

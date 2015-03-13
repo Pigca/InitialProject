@@ -1,19 +1,41 @@
 package hkust.comp4521.project.pigca;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 
 
-public class postActivity extends ActionBarActivity {
+public class postActivity extends ActionBarActivity implements NewPostFragment.OnFragmentInteractionListener, CameraFragment.OnFragmentInteractionListener{
+
+    private Post post;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        post = new Post();
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
+
+        FragmentManager manager = getFragmentManager();
+        Fragment fragment = manager.findFragmentById(R.id.fragmentContainer);
+
+        if(fragment == null){
+            fragment = new NewPostFragment();
+            manager.beginTransaction().add(R.id.fragmentContainer, fragment).commit();
+        }
     }
 
+    public Post getCurrentPost(){
+        return post;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -30,10 +52,15 @@ public class postActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        //if (id == R.id.action_settings) {
+            //return true;
+        //}
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

@@ -11,4 +11,24 @@
         android:title="Logout"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/menu_title"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:title="@string/post_title"/>
+
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@drawable/ic_action_refresh"
+        app:showAsAction="ifRoom"
+        android:title="@string/action_refresh">
+    </item>
+
+    <item
+        android:id="@+id/action_favorites"
+        android:icon="@drawable/ic_action_favorite"
+        app:showAsAction="ifRoom"
+        android:title="@string/action_favorite">
+    </item>
+
 </menu>
